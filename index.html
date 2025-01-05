@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="calculator.js">render()</script> 
+</head>
+<body>
+    <h2 class="heading">Calculator</h2>
+    <p class="para"></p>
+    <div class="flex-container">
+        <div class="box"><button onclick="
+            window.location.reload(true); 
+            ">AC</button></div>
+        <div class="box"><button onclick="
+            let para = document.querySelector('.para');
+          console.log(para.innerHTML);
+          let cleanedNum1 = para.innerHTML.replace(/\s+/g, '')
+          num1 = parseFloat(cleanedNum1);
+          console.log(num1);
+            para.innerHTML = para.innerHTML.substring(0, para.innerHTML.length - 1);  
+            console.log(para.innerHTML);  
+            ">C</button> </div>
+         <div class="box"><button onclick="
+          a=1
+          getNum1() "
+          >÷</button> </div>
+      </div>
+    <div class="flex-container">
+        <div class="numeric"><button onclick="
+            render()">7</button></div>
+        <div class="numeric"><button onclick="render()">8</button> </div>
+        <div class="numeric"><button onclick="render()">9</button> </div> <div class="box"><button onclick="
+           a=2
+           getNum1() 
+            ">x</button> </div>
+      </div>  
+      
+      <div class="flex-container">
+        <div class="numeric"><button onclick="render()">4</button></div>
+        <div class="numeric"><button onclick="render()">5</button> </div>
+        <div class="numeric"><button onclick="render()">6</button> </div> <div class="box"><button onclick="
+            a=3
+            getNum1()
+            ">-</button> </div>
+      </div>
+      <div class="flex-container">
+        <div class="numeric"><button onclick="render()">1</button></div>
+        <div class="numeric"><button onclick="render()">2</button> </div>
+        <div class="numeric"><button onclick="render()">3</button> </div> <div class="box"><button onclick="
+            a=4
+            getNum1()
+            ">+</button> </div>
+      </div>
+      <div class="flex-container">
+        <div class="numeric"><button onclick="render()">0</button></div>
+        <div class="numeric"><button onclick="render()">.</button> </div>
+        <div class="box"><button onclick="
+            let para = document.querySelector('.para');
+            console.log(para.innerHTML);
+            let cleanedNum2 = para.innerHTML.replace(/\s+/g, '')
+            num2 = parseFloat(cleanedNum2);
+            console.log(num2);
+            if (a===1){
+              finalAnswer = num1/num2;
+            }
+            else if (a===2){
+              finalAnswer = num1*num2;
+            }
+            else if (a===3){
+              finalAnswer = num1-num2;
+            }
+            else if (a==4){
+              finalAnswer = num1+num2;
+            }
+            else {
+              para.innerHTML = 'INVALID COMMAND';
+              console.log('invalid command');
+            }
+            para.innerHTML = finalAnswer.toString();
+            console.log(para.innerHTML);
+             ">=</button> </
+      </div>  
+
+</body>
+</html>
